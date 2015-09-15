@@ -10,7 +10,7 @@
 list_t* insert_sorted(list_t* head, list_t* new_element) {
 	assert(head != NULL);
 	assert(new_element != NULL);
-
+//
 	return head;
 }
 
