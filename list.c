@@ -11,13 +11,18 @@ list_t* insert_sorted(list_t* head, list_t* new_element) {
 	assert(head != NULL);
 	assert(new_element != NULL);
 	list_t* ptr = head;
-	while (ptr->next != NULL){
-		if (ptr->next->index < new_element->index) {
-			ptr = ptr->next;
-		}else {
-			new_element->next = ptr->next;
-			ptr->next = new_element;
-			break;
+	if (new_element->index <= ptr->index) { 
+		new_element->next = head;
+		head = new_element;
+	}else{
+		while (ptr->next != NULL){
+			if (ptr->next->index < new_element->index) {
+				ptr = ptr->next;
+			}else {
+				new_element->next = ptr->next;
+				ptr->next = new_element;
+				break;
+			}
 		}
 	}
 	if (ptr->next == NULL){
