@@ -35,8 +35,8 @@ list_t* insert_sorted(list_t* head, list_t* new_element) {
 // the resulting list. You do not need to preserve the original list.
 list_t* reverse(list_t* head) {
 	assert(head != NULL);
-	list* current = head->next;
-	list* tmp;
+	list_t* current = head->next;
+	list_t* tmp;
 	head->next = NULL;
 	while (current != NULL) {
 		tmp = current->next;
