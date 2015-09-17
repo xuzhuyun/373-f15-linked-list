@@ -24,12 +24,7 @@ list_t* insert_sorted(list_t* head, list_t* new_element) {
 				break;
 			}
 		}
-	}
-	if (ptr->next == NULL){
-		if (ptr == head) {
-			new_element->next = head;
-			head = new_element;	
-		}else{
+		if (ptr->next == NULL){
 			ptr->next = new_element;
 		}
 	}
